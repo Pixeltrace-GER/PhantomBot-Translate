@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  python:
+    build:
+	  context: ./
+	  dockerfile: ./Dockerfile
+	working_dir: /home
+	container_name: DockerPython
+	volumes:
+	  - ./data:/home
