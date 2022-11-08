@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
-import os
-import re
+import os, re
+import pysondb
+
 
 def find_files(root, ext):
   for root, dirs, files in os.walk(root):
@@ -13,3 +14,17 @@ def find_files(root, ext):
     for d in dirs:
       d = os.path.join(root, d)
       find_files(d, ext)
+      
+      
+def replace_regex(text):
+  print(re.sub("'(?:[^\\']|\\\\|\\')*'", "", text))
+      
+def find_regex(line):
+  return re.findall(r"'(?:[^\\']|\\\\|\\')*'", line)
+
+
+
+if __name__ == '__main__':
+  for f in find_files('.\\', '.js'):
+    print(f)
+    
