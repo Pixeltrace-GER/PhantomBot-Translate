@@ -2,7 +2,6 @@
 import os, re
 import pysondb
 
-
 def find_files(root, ext):
   for root, dirs, files in os.walk(root):
     for f in files:
@@ -21,11 +20,12 @@ def replace_regex(text):
 def find_regex(line):
   return re.findall(r"'(?:[^\\']|\\\\|\\')*'", line)
 
-
-
 if __name__ == '__main__':
-  print("Version 0.0.2")
+  print("Version 0.0.3")
   for file in find_files('/src', '.js'):
-    with open(file, 'r', encoding='utf-8') as line:
-      line.read().splitlines(keepends=False)
+    with open(file, 'r', encoding='utf-8') as f:
+      for ln in f:
+        if ln.startswith("$.lang.register"):
+          line_data = find_regex(ln)
+          print(line_data[0])
     
