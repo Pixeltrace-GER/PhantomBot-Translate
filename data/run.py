@@ -26,7 +26,7 @@ def add_var(var, val):
   en_latest.add({"name":\"var[1:-1]\","data":\"val[1:-1]\"})
 
 if __name__ == '__main__':
-  print("Version 0.0.3")
+  print("Version 0.0.4")
   for file in find_files('/src', '.js'):
     with open(file, 'r', encoding='utf-8') as f:
       for ln in f:
