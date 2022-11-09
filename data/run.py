@@ -25,6 +25,6 @@ def find_regex(line):
 
 
 if __name__ == '__main__':
-  for f in find_files('.\\', '.js'):
+  for f in find_files('/src', '.js'):
     print(f)
   print("done")
