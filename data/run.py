@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 import os, re
 import pysondb
 
@@ -25,6 +24,10 @@ def find_regex(line):
 
 
 if __name__ == '__main__':
+  print("List Dir")
+  os.listdir('/src')
+  
+  print("List Files")
   for f in find_files('/src', '.js'):
     print(f)
-  print("done")
+    
