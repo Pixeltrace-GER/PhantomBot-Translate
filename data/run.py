@@ -27,5 +27,5 @@ if __name__ == '__main__':
   print("Version 0.0.2")
   for file in find_files('/src', '.js'):
     with open(file, 'r', encoding='utf-8') as line:
-      line.read().splitlines(keepends=False).rstrip('\n')
+      line.read().splitlines(keepends=False)
     
