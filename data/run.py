@@ -24,6 +24,8 @@ def find_regex(line):
 
 
 if __name__ == '__main__':
-  for f in find_files('/src', '.js'):
-    print(f)
+  for file in find_files('/src', '.js'):
+    print(file)
+    with open(file, 'r', encoding='utf-8') as line:
+	    [_.rstrip('\n') for _ in line]
     
