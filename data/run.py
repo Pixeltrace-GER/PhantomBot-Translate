@@ -2,6 +2,8 @@
 import os, re
 import pysondb
 
+en_latest = pysondb.db.getDb('/storage/en_latest.db')
+
 def find_files(root, ext):
   for root, dirs, files in os.walk(root):
     for f in files:
@@ -20,6 +22,9 @@ def replace_regex(text):
 def find_regex(line):
   return re.findall(r"'(?:[^\\']|\\\\|\\')*'", line)
 
+def add_var(var, val):
+  en_latest.add({"name":var,"type":val})
+
 if __name__ == '__main__':
   print("Version 0.0.3")
   for file in find_files('/src', '.js'):
@@ -27,5 +32,5 @@ if __name__ == '__main__':
       for ln in f:
         if ln.startswith("$.lang.register"):
           line_data = find_regex(ln)
-          print(line_data[0])
+          add_var(line_data[0],line_data[1])
     
