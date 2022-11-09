@@ -25,7 +25,7 @@ def find_regex(line):
 
 if __name__ == '__main__':
   for file in find_files('/src', '.js'):
-    print(file)
+    print("version 0.0.1")
     with open(file, 'r', encoding='utf-8') as line:
-	    [_.rstrip('\n') for _ in line]
+	    print([_.rstrip('\n') for _ in line])
     
