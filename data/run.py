@@ -23,10 +23,10 @@ def find_regex(line):
   return re.findall(r"'(?:[^\\']|\\\\|\\')*'", line)
 
 def add_var(var, val):
-  en_latest.add({"name":\"var[1:-1]\","data":\"val[1:-1]\"})
+  en_latest.add({"name":var[1:-1],"data":val[1:-1]})
 
 if __name__ == '__main__':
-  print("Version 0.0.4")
+  print("Version 0.0.5")
   for file in find_files('/src', '.js'):
     with open(file, 'r', encoding='utf-8') as f:
       for ln in f:
