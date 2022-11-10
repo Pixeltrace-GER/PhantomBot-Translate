@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import os, re
-import sqlite3 as ls
+import sqlite3 as sql
 
-con sl.connect('/storage/test.db')
+con sql.connect('/storage/test.db')
 
 def find_files(root, ext):
   for root, dirs, files in os.walk(root):
@@ -26,7 +26,7 @@ def add_var(var, val):
   print("Insert Val")
 
 if __name__ == '__main__':
-  print("Version 0.0.5")
+  print("Version 0.0.6")
   for file in find_files('/src', '.js'):
     with open(file, 'r', encoding='utf-8') as f:
       for ln in f:
