@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import os, re
-import sqlite3 as sql
+import sqlite3
 
-con sql.connect('/storage/test.db')
+con = sqlite3.connect('/storage/test.db')
 
 def find_files(root, ext):
   for root, dirs, files in os.walk(root):
