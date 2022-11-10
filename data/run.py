@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import os, re
-import pysondb
+import sqlite3 as ls
 
-en_latest = pysondb.db.getDb('/storage/en_latest.db')
+con sl.connect('/storage/test.db')
 
 def find_files(root, ext):
   for root, dirs, files in os.walk(root):
@@ -23,7 +23,7 @@ def find_regex(line):
   return re.findall(r"'(?:[^\\']|\\\\|\\')*'", line)
 
 def add_var(var, val):
-  en_latest.add({"name":var[1:-1],"data":val[1:-1]})
+  print("Insert Val")
 
 if __name__ == '__main__':
   print("Version 0.0.5")
